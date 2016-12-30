@@ -9,4 +9,8 @@
 import UIKit
 
 class Title: NSObject {
+    var title: Int
+    var start: TimeInterval
+    var end: TimeInterval
+    var text: String
 }

@@ -9,4 +9,9 @@
 import UIKit
 
 public class Subtitles: NSObject {
+    var titles: [Title]?
+    
+    public init(file: NSString) {
+        super.init()
+    }
 }

@@ -14,6 +14,7 @@
 		854285421E16AFBE007CBE9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 854285401E16AFBE007CBE9B /* LaunchScreen.storyboard */; };
 		854285541E16B06E007CBE9B /* Swubtitles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 854285511E16B018007CBE9B /* Swubtitles.framework */; };
 		854285551E16B06E007CBE9B /* Swubtitles.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 854285511E16B018007CBE9B /* Swubtitles.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8542855D1E16BCE6007CBE9B /* Kung.Fu.Panda.3.2016.1080p-CHT.srt in Resources */ = {isa = PBXBuildFile; fileRef = 8542855C1E16BCE6007CBE9B /* Kung.Fu.Panda.3.2016.1080p-CHT.srt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		854285411E16AFBE007CBE9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		854285431E16AFBE007CBE9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8542854B1E16B017007CBE9B /* Swubtitles.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swubtitles.xcodeproj; path = ../Swubtitles/Swubtitles.xcodeproj; sourceTree = "<group>"; };
+		8542855C1E16BCE6007CBE9B /* Kung.Fu.Panda.3.2016.1080p-CHT.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Kung.Fu.Panda.3.2016.1080p-CHT.srt"; path = "../../../../../Downloads/Kung.Fu.Panda.3.2016.1080p-CHT.srt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		854285361E16AFBE007CBE9B /* SwubtitlesExample */ = {
 			isa = PBXGroup;
 			children = (
+				8542855B1E16BCD1007CBE9B /* Subtitle files */,
 				854285371E16AFBE007CBE9B /* AppDelegate.swift */,
 				854285391E16AFBE007CBE9B /* ViewController.swift */,
 				8542853B1E16AFBE007CBE9B /* Main.storyboard */,
@@ -114,6 +117,14 @@
 				854285531E16B018007CBE9B /* SwubtitlesTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8542855B1E16BCD1007CBE9B /* Subtitle files */ = {
+			isa = PBXGroup;
+			children = (
+				8542855C1E16BCE6007CBE9B /* Kung.Fu.Panda.3.2016.1080p-CHT.srt */,
+			);
+			name = "Subtitle files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8542855D1E16BCE6007CBE9B /* Kung.Fu.Panda.3.2016.1080p-CHT.srt in Resources */,
 				854285421E16AFBE007CBE9B /* LaunchScreen.storyboard in Resources */,
 				8542853F1E16AFBE007CBE9B /* Assets.xcassets in Resources */,
 				8542853D1E16AFBE007CBE9B /* Main.storyboard in Resources */,
@@ -387,6 +399,7 @@
 				854285481E16AFBE007CBE9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

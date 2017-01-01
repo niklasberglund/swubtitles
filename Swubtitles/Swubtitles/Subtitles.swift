@@ -89,7 +89,7 @@ public class Subtitles: NSObject {
         let millisecondsString = millisecondsResult! as String
         let milliseconds = Int(millisecondsString)
         
-        let timeInterval: Double = Double(hoursResult) * Double(3600) + Double(minutesResult) * Double(60) + Double(seconds!) + Double(Double(milliseconds!)/Double(1000))
+        let timeInterval: Double = Double(hoursResult) * 3600 + Double(minutesResult) * 60 + Double(seconds!) + Double(Double(milliseconds!)/1000)
         
         return timeInterval as TimeInterval
     }

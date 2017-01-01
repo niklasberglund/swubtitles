@@ -9,6 +9,11 @@
 import UIKit
 import Foundation
 
+public enum ParseSubtitleError: Error {
+    case Failed
+    case InvalidFormat
+}
+
 public class Subtitles: NSObject {
     var titles: [Title]?
     
@@ -17,14 +22,19 @@ public class Subtitles: NSObject {
         
         do {
             let fileContent = try String(contentsOf: fileUrl, encoding: String.Encoding.utf8)
-            titles = self.parseSRTSub(fileContent)
+            do {
+                titles = try self.parseSRTSub(fileContent)
+            }
+            catch {
+                debugPrint(error)
+            }
         }
         catch {
             debugPrint(error)
         }
     }
     
-    func parseSRTSub(_ rawSub: String) -> [Title] {
+    func parseSRTSub(_ rawSub: String) throws -> [Title] {
         var allTitles = [Title]()
         let components = rawSub.components(separatedBy: "\r\n\r\n")
         
@@ -41,15 +51,15 @@ public class Subtitles: NSObject {
             var endResult: NSString?
             var textResult: NSString?
             
-            while scanner.isAtEnd == false {
-                scanner.scanInt(&indexResult)
-                scanner.scanUpToCharacters(from: CharacterSet.whitespaces, into: &startResult)
-                
-                scanner.scanUpTo("--> ", into: nil)
-                scanner.scanLocation += 4
-                scanner.scanUpToCharacters(from: CharacterSet.newlines, into: &endResult)
-                
-                scanner.scanUpToCharacters(from: CharacterSet.newlines, into: &textResult)
+            let indexScanSuccess = scanner.scanInt(&indexResult)
+            let startTimeScanResult = scanner.scanUpToCharacters(from: CharacterSet.whitespaces, into: &startResult)
+            let dividerScanSuccess = scanner.scanUpTo("> ", into: nil)
+            scanner.scanLocation += 4
+            let endTimeScanResult = scanner.scanUpToCharacters(from: CharacterSet.newlines, into: &endResult)
+            let textScanResult = scanner.scanUpToCharacters(from: CharacterSet.newlines, into: &textResult)
+            
+            guard indexScanSuccess && startTimeScanResult && dividerScanSuccess && endTimeScanResult && textScanResult else {
+                throw ParseSubtitleError.InvalidFormat
             }
             
             let textLines = textResult?.components(separatedBy: CharacterSet.newlines)

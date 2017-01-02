@@ -36,7 +36,12 @@ public class Subtitles: NSObject {
     
     func parseSRTSub(_ rawSub: String) throws -> [Title] {
         var allTitles = [Title]()
-        let components = rawSub.components(separatedBy: "\r\n\r\n")
+        var components = rawSub.components(separatedBy: "\r\n\r\n")
+        
+        // Fall back to \n\n separation
+        if components.count == 1 {
+            components = rawSub.components(separatedBy: "\n\n")
+        }
         
         for component in components {
             if component.isEmpty {

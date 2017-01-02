@@ -11,6 +11,9 @@ import XCTest
 
 class SwubtitlesTests: XCTestCase {
     
+    let frameworkBundle = Bundle(for: SwubtitlesTests.self)
+    
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,9 +24,15 @@ class SwubtitlesTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testProperlyFormattedSubtitles() {
+        guard let subtitlesFileUrl = self.frameworkBundle.url(forResource: "10-subs", withExtension:"srt") else {
+            fatalError("Error loading subtitles")
+        }
+        
+        let subtitles = Subtitles(fileUrl: subtitlesFileUrl)
+        
+        XCTAssertNotNil(subtitles.titles)
+        XCTAssert(subtitles.titles?.count == 10)
     }
     
     func testPerformanceExample() {

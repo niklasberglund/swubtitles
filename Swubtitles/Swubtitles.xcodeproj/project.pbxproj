@@ -13,6 +13,9 @@
 		8542854A1E16AFDF007CBE9B /* Subtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854285491E16AFDF007CBE9B /* Subtitles.swift */; };
 		8542855A1E16B16F007CBE9B /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854285591E16B16F007CBE9B /* Title.swift */; };
 		859F85DF1E193934009014FA /* OpenSubtitlesHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F85DE1E193934009014FA /* OpenSubtitlesHash.swift */; };
+		859F85E41E1A21A8009014FA /* 10-subs-format-mistakes.srt in Resources */ = {isa = PBXBuildFile; fileRef = 859F85E11E1A21A8009014FA /* 10-subs-format-mistakes.srt */; };
+		859F85E51E1A21A8009014FA /* 10-subs-some-double.srt in Resources */ = {isa = PBXBuildFile; fileRef = 859F85E21E1A21A8009014FA /* 10-subs-some-double.srt */; };
+		859F85E61E1A21A8009014FA /* 10-subs.srt in Resources */ = {isa = PBXBuildFile; fileRef = 859F85E31E1A21A8009014FA /* 10-subs.srt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 		854285491E16AFDF007CBE9B /* Subtitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subtitles.swift; sourceTree = "<group>"; };
 		854285591E16B16F007CBE9B /* Title.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		859F85DE1E193934009014FA /* OpenSubtitlesHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSubtitlesHash.swift; sourceTree = "<group>"; };
+		859F85E11E1A21A8009014FA /* 10-subs-format-mistakes.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "10-subs-format-mistakes.srt"; path = "Subtitle files/10-subs-format-mistakes.srt"; sourceTree = "<group>"; };
+		859F85E21E1A21A8009014FA /* 10-subs-some-double.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "10-subs-some-double.srt"; path = "Subtitle files/10-subs-some-double.srt"; sourceTree = "<group>"; };
+		859F85E31E1A21A8009014FA /* 10-subs.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "10-subs.srt"; path = "Subtitle files/10-subs.srt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +95,21 @@
 		8542851E1E16AF96007CBE9B /* SwubtitlesTests */ = {
 			isa = PBXGroup;
 			children = (
+				859F85E01E1A2196009014FA /* Subtitles */,
 				8542851F1E16AF96007CBE9B /* SwubtitlesTests.swift */,
 				854285211E16AF96007CBE9B /* Info.plist */,
 			);
 			path = SwubtitlesTests;
+			sourceTree = "<group>";
+		};
+		859F85E01E1A2196009014FA /* Subtitles */ = {
+			isa = PBXGroup;
+			children = (
+				859F85E11E1A21A8009014FA /* 10-subs-format-mistakes.srt */,
+				859F85E21E1A21A8009014FA /* 10-subs-some-double.srt */,
+				859F85E31E1A21A8009014FA /* 10-subs.srt */,
+			);
+			name = Subtitles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +215,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				859F85E51E1A21A8009014FA /* 10-subs-some-double.srt in Resources */,
+				859F85E41E1A21A8009014FA /* 10-subs-format-mistakes.srt in Resources */,
+				859F85E61E1A21A8009014FA /* 10-subs.srt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

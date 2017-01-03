@@ -59,7 +59,7 @@ public class Subtitles: NSObject {
             let indexScanSuccess = scanner.scanInt(&indexResult)
             let startTimeScanResult = scanner.scanUpToCharacters(from: CharacterSet.whitespaces, into: &startResult)
             let dividerScanSuccess = scanner.scanUpTo("> ", into: nil)
-            scanner.scanLocation += 4
+            scanner.scanLocation += 2
             let endTimeScanResult = scanner.scanUpToCharacters(from: CharacterSet.newlines, into: &endResult)
             scanner.scanLocation += 1
             
@@ -82,7 +82,6 @@ public class Subtitles: NSObject {
             
             let startTimeInterval: TimeInterval = timeIntervalFromString(startResult! as String)
             let endTimeInterval: TimeInterval = timeIntervalFromString(endResult! as String)
-            
             
             let title = Title(withTexts: textLines, start: startTimeInterval, end: endTimeInterval, index: indexResult)
             allTitles.append(title)

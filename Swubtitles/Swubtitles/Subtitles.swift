@@ -61,18 +61,30 @@ public class Subtitles: NSObject {
             let dividerScanSuccess = scanner.scanUpTo("> ", into: nil)
             scanner.scanLocation += 4
             let endTimeScanResult = scanner.scanUpToCharacters(from: CharacterSet.newlines, into: &endResult)
-            let textScanResult = scanner.scanUpToCharacters(from: CharacterSet.newlines, into: &textResult)
+            scanner.scanLocation += 1
             
-            guard indexScanSuccess && startTimeScanResult && dividerScanSuccess && endTimeScanResult && textScanResult else {
+            var textLines = [String]()
+            
+            // Iterate over text lines
+            while scanner.isAtEnd == false {
+                let textLineScanResult = scanner.scanUpToCharacters(from: CharacterSet.newlines, into: &textResult)
+                
+                guard textLineScanResult else {
+                    throw ParseSubtitleError.InvalidFormat
+                }
+                
+                textLines.append(textResult as! String)
+            }
+            
+            guard indexScanSuccess && startTimeScanResult && dividerScanSuccess && endTimeScanResult else {
                 throw ParseSubtitleError.InvalidFormat
             }
             
-            let textLines = textResult?.components(separatedBy: CharacterSet.newlines)
             let startTimeInterval: TimeInterval = timeIntervalFromString(startResult! as String)
             let endTimeInterval: TimeInterval = timeIntervalFromString(endResult! as String)
             
             
-            let title = Title(withTexts: textLines!, start: startTimeInterval, end: endTimeInterval, index: indexResult)
+            let title = Title(withTexts: textLines, start: startTimeInterval, end: endTimeInterval, index: indexResult)
             allTitles.append(title)
         }
         

@@ -16,6 +16,11 @@ class ViewController: UIViewController {
         
         let exampleSubtitlesUrl = Bundle.main.url(forResource: "Kung.Fu.Panda.3.2016.1080p-CHT", withExtension: "srt")
         let subtitles = Subtitles(fileUrl: exampleSubtitlesUrl!)
+        
+        for title in subtitles.titles! {
+            print("Do something with title starting at \(title.start) ending at \(title.end):")
+            print(title.texts!.description + "\n")
+        }
     }
 
     override func didReceiveMemoryWarning() {

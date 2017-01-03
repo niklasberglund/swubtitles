@@ -1,6 +1,11 @@
 # swubtitles
 Subtitles parsing and downloading with Swift 3
 
+## Installation
+### Installation with CocoaPods
+Will be available once the framework is released.
+
+
 ## Usage example
 Parse a SRT subtitles file and iterate over the results.
 

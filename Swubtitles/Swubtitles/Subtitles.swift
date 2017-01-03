@@ -15,7 +15,7 @@ public enum ParseSubtitleError: Error {
 }
 
 public class Subtitles: NSObject {
-    var titles: [Title]?
+    public var titles: [Title]?
     
     public init(fileUrl: URL) {
         super.init()

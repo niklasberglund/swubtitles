@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Title: NSObject {
+public class Title: NSObject {
     var texts: [String]?
     var start: TimeInterval?
     var end: TimeInterval?

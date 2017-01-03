@@ -35,6 +35,28 @@ class SwubtitlesTests: XCTestCase {
         XCTAssert(subtitles.titles?.count == 10)
     }
     
+    func testProperlyFormattedDoubleLineSubtitles() {
+        guard let subtitlesFileUrl = self.frameworkBundle.url(forResource: "10-subs-some-double", withExtension:"srt") else {
+            fatalError("Error loading subtitles")
+        }
+        
+        let subtitles = Subtitles(fileUrl: subtitlesFileUrl)
+        
+        XCTAssertNotNil(subtitles.titles)
+        XCTAssert(subtitles.titles!.count == 10)
+        XCTAssertNotNil(subtitles.titles?[0].texts)
+        XCTAssert(subtitles.titles?[0].texts?.count == 2)
+        XCTAssert(subtitles.titles?[1].texts?.count == 1)
+        XCTAssert(subtitles.titles?[2].texts?.count == 1)
+        XCTAssert(subtitles.titles?[3].texts?.count == 2)
+        XCTAssert(subtitles.titles?[4].texts?.count == 1)
+        XCTAssert(subtitles.titles?[5].texts?.count == 1)
+        XCTAssert(subtitles.titles?[6].texts?.count == 1)
+        XCTAssert(subtitles.titles?[7].texts?.count == 2)
+        XCTAssert(subtitles.titles?[8].texts?.count == 1)
+        XCTAssert(subtitles.titles?[9].texts?.count == 2)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

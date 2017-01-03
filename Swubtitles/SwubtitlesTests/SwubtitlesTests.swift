@@ -35,6 +35,26 @@ class SwubtitlesTests: XCTestCase {
         XCTAssert(subtitles.titles?.count == 10)
     }
     
+    func testProperlyFormattedSubtitlesTitleOrder() {
+        guard let subtitlesFileUrl = self.frameworkBundle.url(forResource: "10-subs", withExtension:"srt") else {
+            fatalError("Error loading subtitles")
+        }
+        
+        let subtitles = Subtitles(fileUrl: subtitlesFileUrl)
+        
+        XCTAssertNotNil(subtitles.titles)
+        
+        var lastEnd: TimeInterval = -99
+        
+        for title in subtitles.titles! {
+            if lastEnd != -99 {
+                XCTAssertGreaterThan(title.start!, lastEnd)
+            }
+            
+            lastEnd = title.end!
+        }
+    }
+    
     func testProperlyFormattedDoubleLineSubtitles() {
         guard let subtitlesFileUrl = self.frameworkBundle.url(forResource: "10-subs-some-double", withExtension:"srt") else {
             fatalError("Error loading subtitles")

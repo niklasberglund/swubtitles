@@ -9,10 +9,10 @@
 import UIKit
 
 public class Title: NSObject {
-    var texts: [String]?
-    var start: TimeInterval?
-    var end: TimeInterval?
-    var index: Int?
+    public var texts: [String]?
+    public var start: TimeInterval?
+    public var end: TimeInterval?
+    public var index: Int?
     
     
     public init(withTexts: [String], start: TimeInterval, end: TimeInterval, index: Int) {

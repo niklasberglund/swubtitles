@@ -62,3 +62,8 @@ class OpenSubtitlesHash: NSObject {
         return fileHash
     }
 }
+
+// Usage example:
+// let videoUrl = Bundle.main.url(forResource: "someVideoFile", withExtension: "avi")
+// let videoHash = OpenSubtitlesHash.hashFor(videoUrl!)
+// debugPrint("File hash: \(videoHash.fileHash)\nFile size: \(videoHash.fileSize)")

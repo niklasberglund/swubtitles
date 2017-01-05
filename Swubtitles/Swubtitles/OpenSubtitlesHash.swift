@@ -54,7 +54,7 @@ class OpenSubtitlesHash: NSObject {
         
         hash = data_bytes.reduce(hash,&+)
         
-        fileHash.fileHash = String(format:"%qx", arguments: [hash])
+        fileHash.fileHash = String(format:"%016qx", arguments: [hash])
         fileHash.fileSize = fileSize
         
         fileHandler.closeFile()

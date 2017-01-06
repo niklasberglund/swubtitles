@@ -48,7 +48,6 @@ public class Subtitles: NSObject {
                 continue
             }
             
-            debugPrint(component)
             let scanner = Scanner(string: component)
             
             var indexResult: Int = -99
@@ -100,7 +99,6 @@ public class Subtitles: NSObject {
         var millisecondsResult: NSString?
         
         // Extract time components from string
-        debugPrint(scanner.scanLocation)
         scanner.scanInt(&hoursResult)
         scanner.scanLocation += 1
         scanner.scanInt(&minutesResult)
